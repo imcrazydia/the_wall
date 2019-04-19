@@ -1,0 +1,186 @@
+/* small screen */
+body {
+  margin: 0;
+  margin-bottom: 1em;
+  padding: 0;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  box-sizing: border-box;;
+}
+
+.profile_head {
+  background-image: url('../img/log_sys_backg_phone.jpg');
+  background-size: cover;
+  width: 100%;
+}
+
+#pic_edit {
+margin-left: 1em;
+}
+
+.returnIcon {
+  text-decoration: none;
+  font-size: 2.5em;
+  color: black;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.returnIcon:hover {
+  color: #666;
+}
+
+.settingIcon {
+  text-decoration: none;
+  font-size: 2.5em;
+  color: black;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.settingIcon:hover {
+  color: #666;
+}
+
+.prof_pic {
+  width: 150px;
+  height: 150px;
+  border: solid #d9d9d9;
+  border-radius: 50%;
+}
+
+.prof_info {
+  margin-top: .5em;
+  background-color: white;
+  margin-left: 2em;
+  margin-right: 2em;
+  border: solid #d9d9d9;
+  padding-bottom: 1em;
+  cursor: default;
+}
+
+.bio {
+  overflow: auto;
+  width: 300px;
+  margin-left: .5em;
+  margin-bottom: 1em;
+}
+
+.prof_info a {
+  text-decoration: none;
+  color: #0066ff;
+}
+
+.prof_info a:hover {
+  color: #66a3ff;
+}
+
+.backNav {
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+}
+
+.nav {
+  overflow: hidden;
+  background-color: #f1f1f1;
+
+}
+.nav button {
+  background-color: inherit;
+  border: none;
+  border-right: 1px solid #666;
+  border-left: 1px solid #666;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 49px;
+  transition: 0.3s;
+  font-size: 1.5em;
+}
+.nav button:hover {
+  background-color: #ddd;
+}
+.nav button.active {
+  background-color: #ccc;
+}
+
+#edit_profile {
+  margin-top: 7px;
+  margin-right: 5px;
+  float: right;
+  width: 35px;
+}
+
+.navContent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+/* small screen landscape */
+@media screen and (min-width: 400px) {
+  .bio {
+    margin-left: 2.5em;
+  }
+}
+
+/* small screen landscape 2*/
+@media screen and (min-width: 600px) {
+  .bio {
+    margin-left: 11em;
+  }
+
+  .navContent::after {
+    content: "";
+  display: table;
+  clear: both;
+  }
+
+  .photo {
+    float: left;
+  width: 50%;
+  }
+}
+
+/* small screen landscape 3*/
+@media screen and (min-width: 700px) {
+  .bio {
+    margin-left: 13.5em;
+  }
+}
+
+/* medium screen */
+@media screen and (min-width: 760px) {
+  .bio {
+    margin-left: 16em;
+    margin-right: 16em;
+  }
+
+}
+
+/* Large screen */
+@media screen and (min-width: 1000px) {
+
+  .bio {
+    margin-left: 24em;
+  }
+
+  .navContent::after {
+    content: "";
+  display: table;
+  clear: both;
+  }
+
+  .photo {
+    float: left;
+  width: 25%;
+  }
+}
+
+/* Extra Large screen */
+@media screen and (min-width: 1280px) {
+  .bio {
+    margin-left: 33em;
+  }
+}

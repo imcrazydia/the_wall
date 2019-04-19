@@ -1,0 +1,59 @@
+/* small screen */
+body {
+  background-image: url('../img/log_sys_backg_phone.jpg');
+  display: grid;
+  grid-template-columns: auto 1fr;
+  padding-bottom: .2em;
+}
+
+.wrapper {
+  background-color: rgb(255, 255, 255);
+  margin-top: 4em;
+  margin-bottom: 2em;
+  margin-left: 1em;
+  border: solid;
+  border-width: 1px;
+}
+
+#logo {
+margin-left: 7.2em;
+}
+#logoText {
+  text-align: center;
+  font-size: 15px;
+}
+
+/* medium screen */
+@media screen and (min-width: 760px) {
+  body {
+    background-image: url('../img/log_sys_backg_ipad.jpg');
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    padding-bottom: .2em;
+
+    grid-template-areas:
+    ". wrapper ."
+    ". wrapper .";
+  }
+
+  .wrapper {
+    margin-top: 16em;
+    margin-left: 1.5em;
+
+    grid-area: wrapper;
+  }
+}
+
+/* Computer */
+@media screen and (min-width: 1000px) {
+  body {
+    background-image: url('../img/log_sys_background.jpg');
+    background-size: cover;
+  }
+
+  .wrapper {
+    margin-top: 12em;
+    margin-left: 5em;
+  }
+}
