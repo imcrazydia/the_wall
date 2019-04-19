@@ -1,5 +1,6 @@
 # the_wall
 ## Groepje: Dia, Mack en Silvain
+## Klas: MD1A
 ## Werkende Link:
 * http://25682.hosts2.ma-cloud.nl/bewijzenmap/periode1.3/proj/the_wall/home.php
 
