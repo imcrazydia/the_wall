@@ -15,6 +15,10 @@
   $stmt_delete->bindParam(':id',$_GET['delete_id']);
   $stmt_delete->execute();
 
+  $stmt_delete = $pdo->prepare('DELETE FROM image_tags WHERE image_id =:id');
+  $stmt_delete->bindParam(':id',$_GET['delete_id']);
+  $stmt_delete->execute();
+
   header("Location: home.php");
  }
 

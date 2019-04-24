@@ -1,6 +1,6 @@
 body {
  margin: 0;
- font-family: Arial, Helvetica, sans-serif;
+ font-family:helvetica;
 }
 
 #navbar {
@@ -34,21 +34,46 @@ body {
   background-color: #ccc;
 }
 
+.post {
+  padding-top: 5px;
+  text-align: center;
+  background-color: #e6e6e6;
+  margin-left: 1em;
+  margin-right: 1em;
+  border: 2px solid #666;
+}
+
 #profPic {
   width: 55px;
   height: 55px;
   border-radius: 50%;
+  margin-bottom: -16px;
+  border: 1px solid #666;
 }
-.post {
-  text-align: center;
+
+.username {
+  font-weight: bold;
+  font-size: 2em;
 }
+
 #postPic {
-  width: 300px;
+  margin-top: -5px;
   height: auto;
+  width: 300px;
+  border: 2px solid #666;
 }
 
-.username{
-
+#deleteButton {
+  text-decoration: none;
+  color: #000;
+  border: 2px solid #ddd;
+  padding: 1em;
+  background-color: #fff;
+}
+#deleteButton:hover {
+  color: red;
+  background-color: #ddd;
+  border-color: #000;
 }
 
  .favIcon {
@@ -59,3 +84,73 @@ body {
  .favIcon:hover {
    color: red;
  }
+
+.alreadyFav {
+  text-decoration: none;
+  color: red;
+  font-size: 2.5em;
+}
+
+.alreadyFav:hover {
+  color: black;
+}
+
+/* smaller screen */
+@media screen and (max-width: 360px) {
+  #navbar a {
+    padding: 15px 13px;
+  }
+}
+
+/* slightly bigger screen */
+@media screen and (min-width: 414px) {
+  #navbar a {
+    padding: 15px 19px;
+  }
+}
+
+
+/* medium screen */
+@media screen and (min-width: 760px) {
+  #navbar a {
+    padding: 15px 49px;
+    font-size: 1em;
+  }
+
+  .post {
+    margin-left: 8em;
+    margin-right: 8em;
+  }
+}
+
+/* big/medium screen */
+@media screen and (min-width: 800px) {
+  #navbar a {
+    padding: 15px 52px;
+    font-size: 1em;
+  }
+}
+
+/* Large screen */
+@media screen and (min-width: 1000px) {
+  #navbar a {
+    padding: 15px 124.4px;
+  }
+
+  .post {
+    margin-left: 20em;
+    margin-right: 20em;
+  }
+
+  #postPic {
+    width: 450px;
+  }
+
+}
+
+/* Extra Large screen */
+@media screen and (min-width: 1200px) {
+  #navbar a {
+    padding: 15px 100px;
+  }
+}

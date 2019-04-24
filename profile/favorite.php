@@ -3,10 +3,17 @@ session_start();
 // Include the database configuration file
 include '../config/config.php';
 
-$query = $pdo->query("INSERT into favorite (file_name, uploaded_on, user_id, post_text)
-SELECT file_name, uploaded_on, user_id, post_text FROM images i LEFT JOIN users u ON u.id = i.user_id");
 
-if ($query) {
+$query = $pdo->prepare("INSERT into favorite (image_id, user_id, favorited_on) VALUES (?, ?, NOW())");
+
+$data = array(
+  $_GET['image_id'],
+  $_SESSION['id']
+);
+
+$insert = $query->execute($data);
+
+if ($insert) {
   header("location: ../home.php");
 } else {
   alert("Error, please try again later.");

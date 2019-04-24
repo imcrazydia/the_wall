@@ -9,9 +9,6 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 }
  ?>
 
- <!--<a href="log_sys/reset-password.php" class="button">Reset Your Password</a>
- <a href="log_sys/logout.php" class="button">Log Out</a>-->
-
  <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,11 +17,12 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <title>Social Direct Messages</title>
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
   <div id="navbar">
-  <a href="#home" class="active"><span>Home</span></a>
+  <a class="active"><span>Home</span></a>
   <a href="#community"><span>Community</span></a>
   <a href="#search"><span>Search</span></a>
   <a href="post/uploadform.php"><span>Post</span></a>
@@ -46,6 +44,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   $user_id = $row['user_id'];
   $prof_p = $row['user_pic'];
   $text = $row['post_text'];
+  $title = $row['title'];
+  $id = $row['id'];
  ?>
    <div class="post">
      <div class="username">
@@ -53,14 +53,19 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <span><?php echo htmlspecialchars($row['username']) ?></span>
   </div>
   <br>
-    <img id="postPic" src="<?php echo $imageURL; ?>" />
-    <br><br>
-    <?php if ($user_id !== $_SESSION['id']) {?>
-      <i class='fab'><a class="favIcon" href="profile/favorite.php">&#xf184;</a></i>
-    <?php } ?>
-    <?php if ($user_id == $_SESSION['id']) { ?>
-    <a class="button" href="delete.php?delete_id=<?php echo $row['id']; ?>" onclick="return confirm('Are you sure ?')">Delete</a> <!-- Probleem: delete alle plaatjes met hetzelfde user_id -->
-  <?php } ?>
+
+  <img id="postPic" src="<?php echo $imageURL; ?>" />
+      <h1><?php echo $title ?></h1>
+      <p><?php echo $text ?></p>
+      <br>
+      <?php if ($user_id == $_SESSION['id']) {?>
+      <!-- Delete button -->
+        <a id="deleteButton" href="delete.php?delete_id=<?php echo $row['id']; ?>" onclick="return confirm('Are you sure ?')">Delete</a>
+      <?php } ?>
+      <!-- Favorite button -->
+      <?php if ($user_id !== $_SESSION['id']) {?>
+        <i class='fab'><a class="favIcon" href="profile/favorite.php?image_id=<?php echo $id ?>">&#xf184;</a></i>
+      <?php } ?>
     <br><br>
   </div>
   <br>

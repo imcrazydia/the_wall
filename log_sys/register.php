@@ -7,6 +7,7 @@ require_once "../config/config.php";
 // Define variables and initialize with empty values
 $username = $password = $confirm_password = $email = "";
 $username_err = $password_err = $confirm_password_err = $email_err = "";
+$default_pic = "prof_pic_uploads/default.png";
 
 
 // Processing form data when form is submitted
@@ -72,13 +73,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($email_err)){
 
         // Prepare an insert statement
-        $sql = "INSERT INTO users (username, password, verificatie_code, email) VALUES (:username, :password, :verificatie_code, :email)";
+        $sql = "INSERT INTO users (username, password, verificatie_code, email, user_pic) VALUES (:username, :password, :verificatie_code, :email, :user_pic)";
 
         if($stmt = $pdo->prepare($sql)){
             // Set parameters
             $param_username = $username;
             $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
             $param_email = $email;
+            $param_profPic = $default_pic;
             $random_bytes = bin2hex(random_bytes(32));
             $param_verificatie = hash('md5', $random_bytes);
 
@@ -86,6 +88,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $stmt->bindParam(":username", $param_username, PDO::PARAM_STR);
             $stmt->bindParam(":password", $param_password, PDO::PARAM_STR);
             $stmt->bindParam(":email", $param_email, PDO::PARAM_STR);
+            $stmt->bindParam(":user_pic", $param_profPic, PDO::PARAM_STR);
             $stmt->bindParam(":verificatie_code", $param_verificatie, PDO::PARAM_STR);
 
             // Attempt to execute the prepared statement

@@ -7,41 +7,109 @@ body
  font: 14px sans-serif;
  text-align: center;
 }
-#wrapper
-{
- text-align:center;
- margin:0 auto;
- padding:0px;
- width:995px;
+
+#navbar {
+  background-color: #f1f1f1;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: block;
+  transition: top 0.3s;
+  border: 2px solid #ccc;
 }
-#output_image
-{
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #000;
+  text-align: center;
+  padding: 15px 15px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
+  border-left: 1px solid #666;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: #ccc;
+}
+
+#wrapper{
+ text-align:center;
+}
+#output_image{
  max-width:300px;
 }
 
-#button2 {
-  text-decoration: none;
-  border: solid;
-  border-color: #f2f2f2;
-  border-radius: 6px;
-  padding: .5em;
-  color: #f2f2f2;
-  background-color: #595959;
-  cursor: pointer;
+#tagField {
+  width: 50%;
+}
+
+input {
+  border: 2px solid #666;
+  padding: 3px;
 }
 
 .button {
+  border: 2px solid #666;
   text-decoration: none;
-  border: solid;
-  border-color: #f2f2f2;
-  border-radius: 6px;
-  padding: .5em;
-  color: #f2f2f2;
-  background-color: #595959;
-  cursor: pointer;
+  background-color: #d9d9d9;
+  padding: 10px;
+  color: #000;
 }
+
 .button:hover {
-  border-color: #595959;
-  color: #595959;
-  background-color: #f2f2f2;
+  background-color: #666;
+  color: #fff;
+}
+
+/* smaller screen */
+@media screen and (max-width: 360px) {
+  #navbar a {
+    padding: 15px 13.3px;
+  }
+}
+
+/* slightly bigger screen */
+@media screen and (min-width: 414px) {
+  #navbar a {
+    padding: 15px 19px;
+  }
+}
+
+
+/* medium screen */
+@media screen and (min-width: 760px) {
+  #navbar a {
+    padding: 15px 52.5px;
+    font-size: 1em;
+  }
+
+}
+
+/* big/medium screen */
+@media screen and (min-width: 800px) {
+  #navbar a {
+    padding: 15px 55.6px;
+    font-size: 1em;
+  }
+}
+
+/* Large screen */
+@media screen and (min-width: 1000px) {
+  #navbar a {
+    padding: 15px 124.4px;
+  }
+}
+
+/* Extra Large screen */
+@media screen and (min-width: 1200px) {
+  #navbar a {
+    padding: 15px 103.5px;
+  }
 }

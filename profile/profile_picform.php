@@ -15,7 +15,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
    <title>Upload</title>
    <meta name="author" content="Diaquino Fortmeier, MD1A">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="../css/upload.css">
+   <link rel="stylesheet" href="../css/edit_profile.css">
    <script type='text/javascript'>
  function preview_image(event)
  {
@@ -35,11 +35,11 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
      <div id="wrapper">
      <input type="file" accept="image/*" id="button2" name="file" onchange="preview_image(event)">
      <br>
-     <img style="min-width:500px; max-width: 500px;" id="output_image"/>
+     <img id="output_image"/>
      </div>
      <br>
      <input class="button" type="submit" name="submit" value="Upload">
-     <a class="button" href="profile.php">Back</a>
+     <a class="button" href="profile_edit.php">Back</a>
    </form>
  </body>
  </html>

@@ -7,9 +7,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   header("location: ../log_sys/login.php");
   exit;
 }
- ?> <!-- Problemen: Als ik in upload_edit_profile.php $bio en $website wil updaten dan lukt het,
-    maar wanneer ik er maar 1 invul dan wordt de andere leeg gemaakt omdat ik hem update met niks erin.
-     En ander probleem is dat als iemands bio te lang is moet je naar links scrollen en ik wil dat het na een aantal char. onder elkaar komt te staan. ) -->
+ ?> <!-- Problemen: probleem is dat als iemands bio te lang is moet je naar links scrollen en ik wil dat het na een aantal char. onder elkaar komt te staan. ) -->
 
  <!DOCTYPE html>
 <html lang="en">
@@ -51,8 +49,10 @@ if($query->rowCount() > 0){
 
      <!-- Profiel Picture, Username and edit profile button-->
      <i class='fas'><a class="returnIcon" href="../home.php">&#xf3e5;</a></i>
-     <i class='fas'><a class="settingIcon" href="profile_edit.php">&#xf013;</a></i>
+     <i class='fas'><a class="settingIcon" href="settings.php">&#xf013;</a></i>
     <img class="prof_pic" src="<?php echo $user_pic ?>" width="81" height="auto" />
+    <br>
+    <a href="profile_edit.php" class="button">Profile Edit</a>
     <div class="prof_info">
     <h2><b><?php echo $username ?></b></h2>
     <div class="bio">
@@ -84,6 +84,7 @@ if($query->rowCount() > 0){
 
  $imageURL = '../uploads/'.$row["file_name"];
  $user_id = $row['user_id'];
+ $id = $row['id'];
 ?>
   <?php if ($user_id == $_SESSION['id']) {?>
     <div class="photo">
@@ -95,7 +96,21 @@ if($query->rowCount() > 0){
 </div>
 
 <div id="favorite" class="navContent">
-  <h3>Favorite Posts</h3>
+  <h2>Here come your favorite posts (Coming soon...)</h2>
+  <!-- <?php
+  //$query = $pdo->query("SELECT * FROM favorite ORDER BY favorited_on DESC");
+
+  //if($query->rowCount() > 0){
+    //while($row = $query->fetch()){
+
+  ?>
+    <?php //if ($row['user_id'] == $_SESSION['id']) {?>
+      <div class="photo">
+       <img src="<?php //echo $imageURL; ?>" width="300" height="300" />
+      </div>
+     <?php //} ?>
+   <?php //}
+ //} ?>-->
 </div>
 
 <script>

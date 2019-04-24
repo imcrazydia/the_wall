@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.prof_pic {
+  width: 150px;
+  height: 150px;
+  border: solid #d9d9d9;
+  border-radius: 50%;
+}
+
+label {
+  font-size: 1.5em;
+}
+
+input {
+  border: 2px solid #666;
+  padding: 3px;
+}
+
+.button {
+  border: 2px solid #666;
+  text-decoration: none;
+  background-color: #d9d9d9;
+  padding: 10px;
+  color: #000;
+}
+
+.button:hover {
+  background-color: #666;
+  color: #fff;
+}
+
+.returnIcon {
+  text-decoration: none;
+  font-size: 2.5em;
+  color: black;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.returnIcon:hover {
+  color: #666;
+}
+
+#changeProfPic {
+  text-decoration: none;
+  color: dodgerblue;
+}
+
+#changeProfPic:hover {
+  color: blue;
+}
+
+#output_image{
+ max-width:300px;
+}
